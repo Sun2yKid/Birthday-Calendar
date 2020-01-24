@@ -14,4 +14,4 @@ Supported by `Github Actions`.
 - [ ] 提供接口，web，或第三方平台接入;
 
 ### 问题
-- [ ] 配置文件为明文，smtp信息不安全
+- [ ] 配置文件为明文，smtp信息和个人信息不安全

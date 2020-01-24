@@ -9,7 +9,7 @@ production:
       offset: 3
       solar: true
     - title: my birthday
-      date: "1993-01-26"
+      date: "1993-05-08"
       offset: 4
       solar: true
     - title: future day test
