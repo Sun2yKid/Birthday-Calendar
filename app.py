@@ -7,12 +7,12 @@ email_file = 'result.html'
 
 
 def parse_day(days: list):
-    today = datetime.datetime.today()
+    today = datetime.date.today()
     print('today:', today)
     for day in days:
         remind_day = datetime.datetime.strptime(day['date'], '%Y-%m-%d')
-        this_year_remind_day = datetime.datetime(today.year, remind_day.month, remind_day.day)
-        timedelta = this_year_remind_day - datetime.datetime.today()
+        this_year_remind_day = datetime.date(today.year, remind_day.month, remind_day.day)
+        timedelta = this_year_remind_day - today
         day['timedelta'] = timedelta.days
         if day['offset'] >= timedelta.days >= 0:
             result.append(day)
@@ -31,7 +31,6 @@ def write_mail(content: list):
 
 if __name__ == '__main__':
     result = []
-    print("days", production_config.days)
     parse_day(production_config.days)
     print('result', result)
     if result:

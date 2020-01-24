@@ -5,7 +5,6 @@ config_file = "config.yaml"
 
 with open(config_file) as f:
     config_content = yaml.load(f, Loader=yaml.Loader)
-    print(config_content)
 
 
 class ProductionConfig:
@@ -14,11 +13,9 @@ class ProductionConfig:
         self.config = config
 
     def __getitem__(self, item):
-        print('getitem', item)
         return self.config.get(item)
 
     def __getattr__(self, item):
-        print('getattr', item, self.config.get(item))
         return self.config.get(item)
 
 
