@@ -8,12 +8,12 @@ production:
       date: "2020-01-25"
       offset: 3
       solar: true
-    - title: my birthday
-      date: "1993-05-08"
-      offset: 4
+    - title: 我的阳历生日
+      date: "1993-06-27"
+      offset: 2
       solar: true
-    - title: future day test
-      date: "2222-01-01"
+    - title: 我的阴历生日
+      date: "1993-05-08"
       offset: 30
       solar: false
 

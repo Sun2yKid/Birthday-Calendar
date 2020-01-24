@@ -3,7 +3,7 @@ import yaml
 config_file = "config.yaml"
 
 
-with open(config_file) as f:
+with open(config_file, encoding='utf-8') as f:
     config_content = yaml.load(f, Loader=yaml.Loader)
 
 
