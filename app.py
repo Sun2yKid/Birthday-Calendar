@@ -39,4 +39,5 @@ if __name__ == '__main__':
         write_mail(result)
     else:
         print('if no notification, remove email_file')
-        os.remove(email_file)
+        if os.path.exists(email_file):
+            os.remove(email_file)
