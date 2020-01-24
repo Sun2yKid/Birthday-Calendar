@@ -3,4 +3,18 @@ main:
 
 production:
   name: birthday calendar
+  days:
+    - title: test
+      date: "2020-03-25"
+      offset: 3
+      solar: true
+    - title: my birthday
+      date: "1993-03-26"
+      offset: 4
+      solar: true
+    - title: future day test
+      date: "2222-03-01"
+      offset: 30
+      solar: false
+
 
