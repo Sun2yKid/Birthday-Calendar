@@ -24,7 +24,7 @@ def upload(bucket_name, key):
     token = q.upload_token(bucket_name, key, 3600)
     #要上传文件的本地路径
 
-    ret, info = put_file(token, key, localfile)
+    ret, info = put_file(token, key, 'config.yaml')
     print(info)
     assert ret['key'] == key
     assert ret['hash'] == etag(localfile)
@@ -41,11 +41,6 @@ def download(bucket_domain, key):
     with open('config.yaml', 'wb') as f:
         f.write(r.content)
     print(os.getcwd())
-    for root, dirs, files in os.walk('..'):
-        for name in files:
-            print(os.path.join(root, name))
-        for name in dirs:
-            print(os.path.join(root, name))
     assert r.status_code == 200
 
 
