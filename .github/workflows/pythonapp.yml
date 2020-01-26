@@ -25,6 +25,7 @@ jobs:
 
     - name: Run application
       run: |
+        python utils/qiniu_api.py ${{secrets.QINIU_AK}} ${{secrets.QINIU_SK}} ${{secrets.QINIU_BUCKETDOMAIN}}
         python app.py
 
     - name: 'Send mail'

@@ -15,3 +15,4 @@ Supported by `Github Actions`.
 
 ### 问题
 - [ ] 配置文件为明文，smtp信息和个人信息不安全
+- [ ] 农历和阳历日期转换

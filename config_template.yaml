@@ -4,10 +4,6 @@ main:
 production:
   name: birthday calendar
   days:
-    - title: test
-      date: "2020-01-25"
-      offset: 3
-      solar: true
     - title: 我的阳历生日
       date: "1993-06-27"
       offset: 2
@@ -16,5 +12,9 @@ production:
       date: "1993-05-08"
       offset: 30
       solar: false
+    - title: amei's birthday
+        date: "1999-01-16"
+        offset: 10
+        solar: false
 
 
