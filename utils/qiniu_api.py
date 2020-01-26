@@ -14,7 +14,7 @@ bucket_domain = sys.argv[3]    # download
 q = Auth(access_key, secret_key)
 
 key = 'Birthday-Calendar/config.yaml'
-localfile = 'config_template.yaml'
+localfile = 'config.yaml'
 
 def upload(bucket_name, key):
     #上传后保存的文件名
@@ -24,7 +24,7 @@ def upload(bucket_name, key):
     token = q.upload_token(bucket_name, key, 3600)
     #要上传文件的本地路径
 
-    ret, info = put_file(token, key, 'config.yaml')
+    ret, info = put_file(token, key, localfile)
     print(info)
     assert ret['key'] == key
     assert ret['hash'] == etag(localfile)
@@ -38,7 +38,7 @@ def download(bucket_domain, key):
     private_url = q.private_download_url(base_url, expires=3600)
     print(private_url)
     r = requests.get(private_url)
-    with open('config.yaml', 'wb') as f:
+    with open(localfile, 'wb') as f:
         f.write(r.content)
     print(os.getcwd())
     assert r.status_code == 200
