@@ -9,7 +9,8 @@ email_file = 'result.html'
 
 def parse_day(days: list):
     today = datetime.date.today()
-    print('today:', today)
+    today_lunar_str, today_lunnar = Solar2LunarCalendar(today.strftime('%Y-%m-%d'))
+    print('today:', today, 'lunar:', today_lunar_str)
     for day in days:
         if day['solar']:
             remind_day = datetime.datetime.strptime(day['date'], '%Y-%m-%d')
@@ -19,8 +20,6 @@ def parse_day(days: list):
             if day['offset'] >= timedelta.days >= 0:
                 result.append(day)
         else:
-            today_lunar_str, today_lunnar = Solar2LunarCalendar(today.strftime('%Y-%m-%d'))
-            print('lunar:', today_lunar_str, day['date'][-5:])
             if today_lunar_str == day['date'][-5:]:
                 day['lunar'] = today_lunnar
                 result.append(day)
