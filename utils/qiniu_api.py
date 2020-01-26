@@ -1,4 +1,5 @@
 import sys
+import os
 import requests
 
 from qiniu import Auth, put_file, etag
@@ -39,6 +40,7 @@ def download(bucket_domain, key):
     r = requests.get(private_url)
     with open('../config.yaml', 'wb') as f:
         f.write(r.content)
+    print(os.getcwd())
     assert r.status_code == 200
 
 
