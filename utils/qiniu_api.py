@@ -41,8 +41,10 @@ def download(bucket_domain, key):
     with open('../config.yaml', 'wb') as f:
         f.write(r.content)
     print(os.getcwd())
-    os.walk(os.getcwd())
-    os.walk('..')
+    for root, dirs, files in os.walk(os.getcwd()):
+        print(os.path.join(root, name))
+        for name in dirs:
+            print(os.path.join(root, name))
     assert r.status_code == 200
 
 
