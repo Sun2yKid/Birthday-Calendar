@@ -14,7 +14,7 @@ bucket_domain = sys.argv[3]    # download
 q = Auth(access_key, secret_key)
 
 key = 'Birthday-Calendar/config.yaml'
-localfile = '../config.yaml.yaml'
+localfile = 'config_template.yaml'
 
 def upload(bucket_name, key):
     #上传后保存的文件名
