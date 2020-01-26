@@ -38,7 +38,7 @@ def download(bucket_domain, key):
     private_url = q.private_download_url(base_url, expires=3600)
     print(private_url)
     r = requests.get(private_url)
-    with open('../config.yaml', 'wb') as f:
+    with open('config.yaml', 'wb') as f:
         f.write(r.content)
     print(os.getcwd())
     for root, dirs, files in os.walk('..'):
