@@ -3,6 +3,8 @@
 This is a tool for reminding you of one's birthday or anniversary by sending you a email before the specific day. 
 Supported by `Github Actions`. 
 
+[Github Actions](https://help.github.com/en/actions)
+
 ### 初期设想
 * 自定义配置文件，配置多人生日，支持农历/阳历
 * Python脚本读取配置，查看是否生日临近，发送提醒邮件
