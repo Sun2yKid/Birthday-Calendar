@@ -8,7 +8,7 @@ import qiniu.config
 
 access_key = sys.argv[1]
 secret_key = sys.argv[2]
-# bucket_name = sys.argv[3]    # upload
+bucket_name = sys.argv[3]    # upload
 bucket_domain = sys.argv[3]    # download
 #构建鉴权对象
 q = Auth(access_key, secret_key)
@@ -45,5 +45,5 @@ def download(bucket_domain, key):
 
 
 if __name__ == '__main__':
-    # upload(bucket_name, key)
-    download(bucket_domain, key)
+    upload(bucket_name, key)
+    # download(bucket_domain, key)
