@@ -45,5 +45,5 @@ def download(bucket_domain, key):
 
 
 if __name__ == '__main__':
-    upload(bucket_name, key)
-    # download(bucket_domain, key)
+    # upload(bucket_name, key)
+    download(bucket_domain, key)
