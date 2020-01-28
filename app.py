@@ -45,7 +45,7 @@ def write_mail(content: list):
         for item in content:
             if item['timedelta']:
                 text = '%s(%s) is coming in %d days!\n' % (item['title'],
-                                                           item['date'] if item['solar'] else item['lunar'],
+                                                           item['date'] if item['solar'] else '农历' + item['date'],
                                                            item['timedelta'])
             else:
                 text = 'Today is %s(%s)!\n' % (item['title'],
