@@ -8,26 +8,25 @@ import qiniu.config
 
 access_key = sys.argv[1]
 secret_key = sys.argv[2]
-bucket_name = sys.argv[3]    # upload
-bucket_domain = sys.argv[3]    # download
+
 #构建鉴权对象
 q = Auth(access_key, secret_key)
 
 key = 'Birthday-Calendar/config.yaml'
 localfile = 'config.yaml'
 
-def upload(bucket_name, key):
-    #上传后保存的文件名
 
+def upload(bucket_name, local_config_file_path):
+    #上传后保存的文件名
 
     #生成上传 Token，可以指定过期时间等
     token = q.upload_token(bucket_name, key, 3600)
     #要上传文件的本地路径
 
-    ret, info = put_file(token, key, localfile)
+    ret, info = put_file(token, key, local_config_file_path)
     print(info)
     assert ret['key'] == key
-    assert ret['hash'] == etag(localfile)
+    assert ret['hash'] == etag(local_config_file_path)
 
 
 def download(bucket_domain, key):
@@ -45,5 +44,12 @@ def download(bucket_domain, key):
 
 
 if __name__ == '__main__':
-    # upload(bucket_name, key)
-    download(bucket_domain, key)
+    # upload: python utils/qiniu_api.py AK SK bucket_name local_config_file_path
+    if len(sys.argv) > 3:
+        bucket_name = sys.argv[3]
+        local_config_file_path = sys.argv[4]
+        upload(bucket_name, local_config_file_path)
+    # download: python utils/qiniu_api.py AK SK bucket_domain
+    else:
+        bucket_domain = sys.argv[3]
+        download(bucket_domain, key)
