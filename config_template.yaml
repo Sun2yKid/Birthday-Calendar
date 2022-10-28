@@ -16,5 +16,9 @@ production:
       date: "1999-01-16"
       offset: 10
       solar: false
+    - title: dad's birthday
+      date: "1969-10-06"
+      offset: 5
+      solar: false
 
 
