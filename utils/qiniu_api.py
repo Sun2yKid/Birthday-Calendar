@@ -38,9 +38,9 @@ def download(bucket_domain, key):
     private_url = q.private_download_url(base_url, expires=3600)
     print(f"private_url: {private_url}")
     r = requests.get(private_url)
+    print(f"r.text:\n{r.text}")
     with open(localfile, 'wb') as f:
         f.write(r.content)
-    print(f"r.text: {r.text}")
     assert r.status_code == 200
 
 
