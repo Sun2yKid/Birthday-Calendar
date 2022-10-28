@@ -45,7 +45,7 @@ def download(bucket_domain, key):
 
 if __name__ == '__main__':
     # upload: python utils/qiniu_api.py AK SK bucket_name local_config_file_path
-    if len(sys.argv) > 3:
+    if len(sys.argv) > 4:
         bucket_name = sys.argv[3]
         local_config_file_path = sys.argv[4]
         upload(bucket_name, local_config_file_path)
